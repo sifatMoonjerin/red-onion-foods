@@ -1,0 +1,15 @@
+.navbar-brand{
+    padding: 0px;
+}
+
+.nav-link{
+    padding: 0px;
+}
+
+.navbar a{
+    margin: 0px 5px;
+}
+
+.navbar-brand img{
+    height: 30px;
+}
