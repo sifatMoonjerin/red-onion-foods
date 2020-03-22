@@ -1,0 +1,24 @@
+.signup-page{
+    height: 100vh;
+    background-image: url('../../resources/signup-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signup-page form{
+    padding-top: 100px;
+}
+
+.signup-page input, .signup-page button{
+    width: 300px;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 10px;
+    border: none;
+    font-size: 22px;
+}
+
+.signup-page input{
+    border: 1px solid lightgray;
+}
+

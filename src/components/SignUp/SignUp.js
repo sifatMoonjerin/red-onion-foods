@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Auth from '../useAuth/useAuth';
+import './SignUp.css';
 
 const SignUp = () => {
     const [userInfo,setuserInfo] = useState({
@@ -8,11 +9,21 @@ const SignUp = () => {
         password: '',
         confirmPass: ''
     });
+    const [newUser, setNewUser] = useState(true)
     
     const auth = Auth();
     
     const handleSubmit = e => {
-        auth.createUser(userInfo.name, userInfo.email, userInfo.password)
+        if(e.target.password.value === e.target.confirmPass.value){
+            auth.createUser(userInfo.name, userInfo.email, userInfo.password);
+        }else{
+            alert('Password did not match.');
+        }
+        e.preventDefault();
+    }
+
+    const handleSignIn = e => {
+        auth.signInUser(userInfo.email, userInfo.password);
         e.preventDefault();
     }
 
@@ -23,9 +34,10 @@ const SignUp = () => {
         })
     }
 
+
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="signup-page">
+            {!auth.user && newUser && <form onSubmit={handleSubmit}>
                 <input type='text' 
                     name="name" 
                     value={userInfo.name}
@@ -59,9 +71,46 @@ const SignUp = () => {
                 ></input>
                 <br/>
                 <input type='submit' 
-                    value='Create Account'
+                    className="btn btn-success" 
+                    value='Sign Up'
                 ></input>
+                
             </form>
+            } 
+
+            {
+                !auth.user && !newUser && <form onSubmit={handleSignIn}>
+                    <input type='text' 
+                    name="email"
+                    value={userInfo.email} 
+                    placeholder='Email'
+                    onChange={handleChange}
+                    required
+                ></input>
+                <br/>
+                <input type='password'
+                    name="password" 
+                    value={userInfo.password} 
+                    placeholder='Password'
+                    onChange={handleChange}
+                    required
+                ></input>
+                <br/>
+                <input type='submit' 
+                    className="btn btn-success" 
+                    value='Log In'
+                ></input>
+                </form>                
+            }  
+            {!auth.user && newUser && <button className="btn btn-primary" onClick={()=>setNewUser(false)}>Existing User</button>}
+            
+            {!auth.user && !newUser && <button className="btn btn-primary" onClick={()=>setNewUser(true)}>Create Account</button> }    
+            
+            {
+                auth.user && <a href="/order">Place Order</a>
+            }
+            
+            
         </div>
     );
 };

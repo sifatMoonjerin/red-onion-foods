@@ -2,7 +2,7 @@ import React from 'react';
 
 const Address = () => {
     return (
-        <div>
+        <div className="address-form">
             <h1>address</h1>
         </div>
     );

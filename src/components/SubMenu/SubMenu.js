@@ -16,9 +16,10 @@ const SubMenu = (props) => {
                 }
             </div>
             <br/>
-            <Link to='/placeorder'>
+            <Link to='/signup'>
                 <button className="btn btn-danger"
-                    disabled={!props.emptyCart}
+                    disabled={props.emptyCart}
+                    onClick={props.handleOrder}
                 >Checkout Your Food</button>
             </Link>
         </div>

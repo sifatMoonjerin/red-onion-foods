@@ -10,11 +10,13 @@ import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/SignUp/SignUp';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import { AuthContextProvider, PrivateRoute } from './components/useAuth/useAuth';
 
 
 function App() {
   return (
     <div className="App">
+      <AuthContextProvider>
       <Router>
         <NavBar></NavBar>
         <Switch>
@@ -24,14 +26,16 @@ function App() {
           <Route path="/signup">
             <SignUp></SignUp>
           </Route>
-          <Route path="/placeorder">
+          <Route path="/order">
             <PlaceOrder></PlaceOrder>
           </Route>
+          
           <Route exact path="/">
             <Home></Home>
           </Route>
         </Switch>
       </Router>
+      </AuthContextProvider>
     </div>
   );
 }

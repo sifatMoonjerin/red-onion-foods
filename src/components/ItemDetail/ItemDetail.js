@@ -24,7 +24,9 @@ const ItemDetail = (props) => {
                     <h3 className="text-center">{props.item.title}</h3>
                     <p>{props.item.description}</p>
                     <div className="row">
-                        <h3 className="col-4">${props.item.price}</h3>
+                        <h3 className="col-4">
+                            ${(props.item.price*quantity).toFixed(2)}
+                        </h3>
                         <div className="col-6 counter">
                             <button className='minus-btn' 
                                 onClick={()=>handleQuantity('-')}

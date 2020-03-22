@@ -10,7 +10,9 @@ const Menu = () => {
             return item.type === curCategory
         }));
     const [curItem, setCurItem] = useState(null);
-    const [emptyCart, setEmptyCart] = useState(!sessionStorage.getItem('cart'));
+    const [cart, setCart] = useState(
+        sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):[]
+    );
 
     const handleMenu = submenu => {
         setCurCategory(submenu);
@@ -26,26 +28,19 @@ const Menu = () => {
     }
 
     const handleCart = (item,quantity) => {
-        const getTestCart = sessionStorage.getItem('cart');
-        const testCart = getTestCart? JSON.parse(getTestCart): [];
-        console.log(testCart);
-        //const newCart = cart.filter(el => el.title !== item.title);
-        const testNewCart = testCart.filter(el => el.title !== item.title);
-        // setCart([...newCart, {
-        //     title: item.title,
-        //     image: item.image,
-        //     quantity: quantity
-        // }])
-
-        const testUpdateCart = [...testNewCart, {
+        const newCart = cart.filter(el => el.title !== item.title);
+        
+        setCart([...newCart, {
             title: item.title,
             image: item.image,
+            price: item.price,
             quantity: quantity
-        }]
-        
-        sessionStorage.setItem('cart',JSON.stringify(testUpdateCart))
+        }])
         setCurItem(null)
-        setEmptyCart(false)
+    }
+
+    const handleOrder = ()=>{
+        sessionStorage.setItem('cart',JSON.stringify(cart))
     }
 
     return (
@@ -60,7 +55,8 @@ const Menu = () => {
                     ></ItemDetail> :
                     <SubMenu curMenu={curMenu}
                         handleItem={handleItem}
-                        emptyCart={!emptyCart}
+                        handleOrder={handleOrder}
+                        emptyCart={!cart.length}
                     ></SubMenu>
             }
             
