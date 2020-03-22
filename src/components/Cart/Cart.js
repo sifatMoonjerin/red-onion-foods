@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CartItem from '../CartItem/CartItem';
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const [cart, setCart] = useState(
@@ -27,9 +28,12 @@ const Cart = (props) => {
                     return <CartItem item={item} handleCart={handleCart}></CartItem>
                 })
             } 
-            <button className="btn btn-danger"
-                    disabled={!props.formComplete}
+            <Link to='/tracking'>
+                <button className="btn btn-danger"
+                        disabled={!props.formComplete}
                 >Place Order</button>
+            </Link>
+            
         </div>
     );
 };

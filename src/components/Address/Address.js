@@ -3,7 +3,6 @@ import './Address.css';
 import {useAuth} from '../useAuth/useAuth';
 
 
-
 const Address = (props) => {
     const auth = useAuth();
 
@@ -18,7 +17,8 @@ const Address = (props) => {
                     placeholder="Enter Your Address " required>
                     </textarea><br/>
                     <input type="text" name="city" placeholder="City" required/>
-                    <input className="btn btn-danger address-btn" type="submit"/>
+                    <input className="btn btn-danger address-btn" type="submit"
+                    value="Save and Continue"/>
                 </form>
             
         </div>

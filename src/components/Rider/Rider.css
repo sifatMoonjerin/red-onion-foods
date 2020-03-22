@@ -1,0 +1,14 @@
+.rider-desc{
+    background-color: lightgray;
+    padding: 20px 10px;
+    border-radius: 15px;
+}
+
+.greetings{
+    width: 90%;
+    margin: 10px auto;
+    background-color: white;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 10px;
+}
