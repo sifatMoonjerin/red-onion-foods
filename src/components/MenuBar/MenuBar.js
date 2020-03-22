@@ -7,15 +7,15 @@ const MenuBar = (props) => {
             <button onClick={()=>props.handleMenu('breakfast')} 
                 className={`menu-toggle 
                 ${props.curCategory === 'breakfast'?'text-danger':''}`}
-            >Breakfast</button>
+            ><h6>Breakfast</h6></button>
             <button onClick={()=>props.handleMenu('lunch')} 
                 className={`menu-toggle 
                 ${props.curCategory === 'lunch'?'text-danger':''}`}
-            >Lunch</button>
+            ><h6>Lunch</h6></button>
             <button onClick={()=>props.handleMenu('dinner')} 
                 className={`menu-toggle 
                 ${props.curCategory === 'dinner'?'text-danger':''}`}
-            >Dinner</button>
+            ><h6>Dinner</h6></button>
         </div>
     );
 };

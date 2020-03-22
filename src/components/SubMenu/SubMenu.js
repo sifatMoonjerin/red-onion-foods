@@ -7,9 +7,16 @@ const SubMenu = (props) => {
         <div className="container">
             <div className="row">
                 {
-                    props.curMenu.map(item => <Item item={item}></Item>)
+                    props.curMenu.map(item => {
+                        return <Item item={item}
+                                    handleItem={props.handleItem}
+                                ></Item>
+                    })
                 }
             </div>
+            <button className="btn btn-danger"
+                disabled={!props.emptyCart}
+            >ok</button>
         </div>
     );
 };

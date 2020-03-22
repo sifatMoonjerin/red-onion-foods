@@ -4,7 +4,7 @@ import './Item.css';
 const Item = (props) => {
     return (
         <div className="col-lg-4">
-            <div className="card">
+            <div onClick={()=>props.handleItem(props.item)} className="card">
                 <img src={props.item.image} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h6>{props.item.title}</h6>
