@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from '../Menu/Menu';
 import Search from '../Search/Search';
+import Character from '../Character/Character';
+
 
 const Home = () => {
 
@@ -8,7 +10,7 @@ const Home = () => {
         <div>
             <Search></Search>
             <Menu></Menu>
-            
+            <Character></Character>
         </div>
     );
 };
