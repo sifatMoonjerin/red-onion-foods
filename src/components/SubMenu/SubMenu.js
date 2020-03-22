@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../Item/Item';
 import './SubMenu.css';
+import { Link } from 'react-router-dom';
 
 const SubMenu = (props) => {
     return (
@@ -14,9 +15,12 @@ const SubMenu = (props) => {
                     })
                 }
             </div>
-            <button className="btn btn-danger"
-                disabled={!props.emptyCart}
-            >ok</button>
+            <br/>
+            <Link to='/placeorder'>
+                <button className="btn btn-danger"
+                    disabled={!props.emptyCart}
+                >Checkout Your Food</button>
+            </Link>
         </div>
     );
 };

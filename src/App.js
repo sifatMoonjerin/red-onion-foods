@@ -9,6 +9,7 @@ import {
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/SignUp/SignUp';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp></SignUp>
+          </Route>
+          <Route path="/placeorder">
+            <PlaceOrder></PlaceOrder>
           </Route>
           <Route exact path="/">
             <Home></Home>
