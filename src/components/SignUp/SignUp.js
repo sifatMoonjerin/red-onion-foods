@@ -107,9 +107,9 @@ const SignUp = () => {
             {!auth.user && newUser && <button className="btn btn-danger" onClick={()=>setNewUser(false)}>Existing User</button>}
             
             {!auth.user && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    
-            
+            <br/>
             {
-                auth.user && <a href="/order">Place Order</a>
+                auth.user && <a className="btn btn-danger" href="/order">Place Order</a>
             }
             
             

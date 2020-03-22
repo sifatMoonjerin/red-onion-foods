@@ -24,7 +24,7 @@ const Rider = () => {
                     01700000000
                 </div>
             </div>
-            <button className="btn btn-danger" >Continue</button>
+            <button className="btn btn-danger" >Contact</button>
         </div>
     );
 };

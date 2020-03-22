@@ -1,12 +1,12 @@
 import React from 'react';
-
 import Menu from '../Menu/Menu';
+import Search from '../Search/Search';
 
 const Home = () => {
 
     return (
         <div>
-            <h2>this is home</h2>
+            <Search></Search>
             <Menu></Menu>
             
         </div>
