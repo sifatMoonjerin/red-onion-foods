@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './Address.css';
+import {useAuth} from '../useAuth/useAuth';
 
-const Address = () => {
+
+
+const Address = (props) => {
+    const auth = useAuth();
+
+
     return (
         <div className="address-form">
-            <h1>address</h1>
+                <form onSubmit={props.handleForm}>
+                    <input className="address-header" type="text" name="title" value="Edit Delivery Detail"/>
+                    <input type="text" name="name" value={auth.user.name}  placeholder="Name" />
+                    <input type="text" name="name" value={auth.user.email}  placeholder="Email" />
+                    <textarea className="address-field" rows = "5" name = "address"
+                    placeholder="Enter Your Address " required>
+                    </textarea><br/>
+                    <input type="text" name="city" placeholder="City" required/>
+                    <input className="btn btn-danger address-btn" type="submit"/>
+                </form>
+            
         </div>
     );
 };

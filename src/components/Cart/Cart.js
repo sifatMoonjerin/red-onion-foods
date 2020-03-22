@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CartItem from '../CartItem/CartItem';
 import './Cart.css';
 
-const Cart = () => {
+const Cart = (props) => {
     const [cart, setCart] = useState(
         JSON.parse(sessionStorage.getItem('cart'))
     );
@@ -19,8 +19,8 @@ const Cart = () => {
             <small>From: <span>Gulistan, Dhaka</span></small>
             <br/>
             <small>Arriving in 20-30 minutes</small>
-            <div>Total: ${
-                (cart.reduce((a,b)=>a+(b.price*b.quantity),0)).toFixed(2)}
+            <div>Total: <strong>${
+                (cart.reduce((a,b)=>a+(b.price*b.quantity),0)).toFixed(2)}</strong>
             </div>
             {
                 cart.map(item => {
@@ -28,7 +28,7 @@ const Cart = () => {
                 })
             } 
             <button className="btn btn-danger"
-                    disabled
+                    disabled={!props.formComplete}
                 >Place Order</button>
         </div>
     );

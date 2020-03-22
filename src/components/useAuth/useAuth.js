@@ -44,7 +44,10 @@ const getUser = usr => {
 };
 
 const Auth = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+      name:'',
+      email:''
+  });
 
   const createUser = async (name, email, password) => {
     try {

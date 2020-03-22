@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Auth from '../useAuth/useAuth';
 import './SignUp.css';
+import logo from '../../resources/logo2.png';
 
 const SignUp = () => {
     const [userInfo,setuserInfo] = useState({
@@ -37,6 +38,7 @@ const SignUp = () => {
 
     return (
         <div className="signup-page">
+            <img src={logo} alt=''></img>
             {!auth.user && newUser && <form onSubmit={handleSubmit}>
                 <input type='text' 
                     name="name" 
@@ -102,9 +104,9 @@ const SignUp = () => {
                 ></input>
                 </form>                
             }  
-            {!auth.user && newUser && <button className="btn btn-primary" onClick={()=>setNewUser(false)}>Existing User</button>}
+            {!auth.user && newUser && <button className="btn btn-danger" onClick={()=>setNewUser(false)}>Existing User</button>}
             
-            {!auth.user && !newUser && <button className="btn btn-primary" onClick={()=>setNewUser(true)}>Create Account</button> }    
+            {!auth.user && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    
             
             {
                 auth.user && <a href="/order">Place Order</a>
