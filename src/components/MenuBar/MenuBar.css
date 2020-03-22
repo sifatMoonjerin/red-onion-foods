@@ -1,0 +1,11 @@
+.menu-toggle{
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.menu-toggle:focus{
+    outline: none;
+}

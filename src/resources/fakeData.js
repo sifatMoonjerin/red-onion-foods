@@ -127,7 +127,7 @@ const fakeData = [
         -Mark Twain`
     },
     {
-        title: 'Salmon with Grapefruit and Lentil Salad',
+        title: 'Salmon with Lentil Salad',
         image: dinner0,
         price: 9.99,
         type: 'dinner',
@@ -145,7 +145,7 @@ const fakeData = [
         -Mark Twain`
     },
     {
-        title: 'Lamb Tenderloin with Quinoa Pilaf',
+        title: 'Lamb Tenderloin',
         image: dinner2,
         price: 12.99,
         type: 'dinner',

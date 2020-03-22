@@ -1,0 +1,18 @@
+.card{
+    margin: 25px auto;
+    width: 16rem;
+    height: 425px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 40px lightgray;
+}
+
+.card-img-top{
+    height: 250px;
+    padding: 20px 40px;
+}
+
