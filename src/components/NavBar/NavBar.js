@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className="navbar-nav flex-row">
                 <a className="nav-item nav-link active" href="/home">Home <span className="sr-only">(current)</span></a>
                 
-                {auth.user? 
+                {auth.user.name? 
                     <a onClick={auth.signOut} className="nav-item nav-link"  href='/home'>Sign Out</a>:
                     <a className="nav-item nav-link" href="/signup">Sign Up</a>}
             </div>

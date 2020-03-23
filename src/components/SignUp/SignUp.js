@@ -39,7 +39,7 @@ const SignUp = () => {
     return (
         <div className="signup-page">
             <img src={logo} alt=''></img>
-            {!auth.user && newUser && <form onSubmit={handleSubmit}>
+            {!auth.user.name && newUser && <form onSubmit={handleSubmit}>
                 <input type='text' 
                     name="name" 
                     value={userInfo.name}
@@ -81,7 +81,7 @@ const SignUp = () => {
             } 
 
             {
-                !auth.user && !newUser && <form onSubmit={handleSignIn}>
+                !auth.user.name && !newUser && <form onSubmit={handleSignIn}>
                     <input type='text' 
                     name="email"
                     value={userInfo.email} 
@@ -104,12 +104,14 @@ const SignUp = () => {
                 ></input>
                 </form>                
             }  
-            {!auth.user && newUser && <button className="btn btn-danger" onClick={()=>setNewUser(false)}>Existing User</button>}
+            {!auth.user.name && newUser && <button className="btn btn-danger" onClick={()=>setNewUser(false)}>Existing User</button>}
             
-            {!auth.user && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    
+            {!auth.user.name && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    
             <br/>
-            {
-                auth.user && <a className="btn btn-danger" href="/order">Place Order</a>
+            {   
+                JSON.parse(sessionStorage.getItem('cart')).length?
+                auth.user.name && <a className="btn btn-danger" href="/order">Place Order</a>:
+                auth.user.name && <a className="btn btn-success" href="/">Start Ordering</a>
             }
             
             
