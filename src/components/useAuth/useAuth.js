@@ -75,17 +75,33 @@ const Auth = () => {
             name: res.user.displayName,
             email: res.user.email
         });
+        
       })
       .catch(err => {
         alert(err.message);
       })
     };
 
+    const signInWithGoogle = () => {
+    
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+      .then(res => {
+        setUser({
+          name: res.user.displayName,
+          email: res.user.email
+      });
+        
+      })
+      .catch(err => {
+        alert(err.message);
+      });
+  };
+
   const signOut = () => {
     firebase.auth().signOut()
     .then(()=>{
         setUser(null);
-        console.log("logged out");
     })
     .catch (error => {
         console.log(error.message);
@@ -107,6 +123,7 @@ const Auth = () => {
     user,
     createUser,
     signInUser,
+    signInWithGoogle,
     signOut
   };
 };

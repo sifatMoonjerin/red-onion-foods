@@ -30,7 +30,7 @@ const Cart = (props) => {
             } 
             <Link to='/tracking'>
                 <button className="btn btn-danger"
-                        disabled={!props.formComplete}
+                        disabled={!props.formComplete || !cart.length}
                 >Place Order</button>
             </Link>
             

@@ -28,6 +28,11 @@ const SignUp = () => {
         e.preventDefault();
     }
 
+    const handleGoogleSignIn = e => {
+        auth.signInWithGoogle(userInfo.email, userInfo.password);
+        e.preventDefault();
+    }
+
     const handleChange = e => {
         setuserInfo({
             ...userInfo,
@@ -73,7 +78,7 @@ const SignUp = () => {
                 ></input>
                 <br/>
                 <input type='submit' 
-                    className="btn btn-success" 
+                    className="btn btn-primary" 
                     value='Sign Up'
                 ></input>
                 
@@ -99,11 +104,14 @@ const SignUp = () => {
                 ></input>
                 <br/>
                 <input type='submit' 
-                    className="btn btn-success" 
+                    className="btn btn-primary" 
                     value='Log In'
                 ></input>
                 </form>                
             }  
+
+            {!auth.user.name && <button className="btn btn-success" onClick={handleGoogleSignIn}>Continue With Google</button>}
+            <br/>
             {!auth.user.name && newUser && <button className="btn btn-danger" onClick={()=>setNewUser(false)}>Existing User</button>}
             
             {!auth.user.name && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    

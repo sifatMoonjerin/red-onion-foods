@@ -37,6 +37,7 @@ const Menu = () => {
             quantity: quantity
         }])
         setCurItem(null)
+        setCurCategory(item.type);
     }
 
     const handleOrder = ()=>{
