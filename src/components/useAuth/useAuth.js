@@ -60,7 +60,7 @@ const Auth = () => {
         name: curUser.displayName,
         email: curUser.email
       });
-      alert('Thank You For Signing Up')
+      
     } catch (error) {
       alert(error.message);
     }
