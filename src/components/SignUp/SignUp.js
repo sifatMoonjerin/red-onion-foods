@@ -116,11 +116,11 @@ const SignUp = () => {
             
             {!auth.user.name && !newUser && <button className="btn btn-danger" onClick={()=>setNewUser(true)}>Create Account</button> }    
             <br/>
-            {   
-                JSON.parse(sessionStorage.getItem('cart')).length?
-                auth.user.name && <a className="btn btn-danger" href="/order">Place Order</a>:
-                auth.user.name && <a className="btn btn-success" href="/">Start Ordering</a>
-            }
+               
+            { auth.user.name && <a className="btn btn-success" href="/">Order More</a>}
+            { auth.user.name && <a className="btn btn-danger" href="/order">Place Order</a>}
+            
+            
             
             
         </div>

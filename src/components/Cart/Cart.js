@@ -20,13 +20,14 @@ const Cart = (props) => {
             <small>From: <span>Gulistan, Dhaka</span></small>
             <br/>
             <small>Arriving in 20-30 minutes</small>
-            <div>Total: <strong>${
-                (cart.reduce((a,b)=>a+(b.price*b.quantity),0)).toFixed(2)}</strong>
+            <div>Total: <strong>${cart?
+                (cart.reduce((a,b)=>a+(b.price*b.quantity),0)).toFixed(2):
+                '0.00'}</strong>
             </div>
             {
-                cart.map(item => {
+               cart? cart.map(item => {
                     return <CartItem item={item} handleCart={handleCart}></CartItem>
-                })
+                }): ''
             } 
             <Link to='/tracking'>
                 <button className="btn btn-danger"
