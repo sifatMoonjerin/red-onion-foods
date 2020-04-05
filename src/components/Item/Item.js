@@ -6,7 +6,6 @@ const Item = (props) => {
         <div className="col-lg-4">
             <div onClick={()=>props.handleItem(props.item)} className="card">
                 <img src={props.item.image} className="card-img-top" alt="..."/>
-                {console.log(props.item.image)}
                 <div className="card-body">
                     <h6>{props.item.title}</h6>
                     <p className="text-muted">{props.item.phrase}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MenuBar from '../MenuBar/MenuBar';
 import SubMenu from '../SubMenu/SubMenu';
 import fakeData from '../../resources/fakeData';
@@ -6,13 +6,18 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const Menu = () => {
     const [curCategory, setCurCategory] = useState('lunch');
-    const [curMenu, setCurMenu] = useState(fakeData.filter(item => {
-            return item.type === curCategory
-        }));
+    const [curMenu, setCurMenu] = useState([]);
     const [curItem, setCurItem] = useState(null);
     const [cart, setCart] = useState(
         sessionStorage.getItem('cart')?JSON.parse(sessionStorage.getItem('cart')):[]
     );
+
+    useEffect(()=>{
+        const newMenu = fakeData.filter(item => {
+            return item.type === curCategory
+        })
+        setCurMenu(newMenu)
+    },[])
 
     const handleMenu = submenu => {
         setCurCategory(submenu);
