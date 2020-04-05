@@ -17,13 +17,10 @@ const Menu = () => {
             return item.type === curCategory
         })
         setCurMenu(newMenu)
-    },[])
+    },[curCategory])
 
     const handleMenu = submenu => {
         setCurCategory(submenu);
-        setCurMenu(fakeData.filter(item => {
-            return item.type === submenu
-        }))
         setCurItem(null)
     }
 
