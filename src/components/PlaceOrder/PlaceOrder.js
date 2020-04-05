@@ -10,9 +10,19 @@ const PlaceOrder = () => {
     // const stripePromise = loadStripe('pk_test_FSxHFs4lKjG8a5L5xO854nWX00IRAYqpqT');
 
     const [formComplete, setFormComplete] = useState(false);
+    const [deliveryDetails, setDeliveryDetails] = useState({});
 
     const handleForm = e => {
-        setFormComplete(true)
+        const details = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            address: e.target.address.value,
+            city: e.target.city.value
+        }
+        
+        setDeliveryDetails(details);
+        setFormComplete(true);
+
         e.preventDefault();
     } 
 
@@ -20,11 +30,14 @@ const PlaceOrder = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-7">
-                    <Address handleForm={handleForm}></Address>
-                    
+                    <Address handleForm={handleForm}
+                        formComplete={formComplete} >
+                    </Address>
                 </div>
                 <div className="col-md-5">
-                    <Cart formComplete={formComplete}></Cart>
+                    <Cart formComplete={formComplete} 
+                        deliveryDetails={deliveryDetails}
+                    ></Cart>
                 </div>
             </div>
             

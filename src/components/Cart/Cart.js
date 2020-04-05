@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CartItem from '../CartItem/CartItem';
 import './Cart.css';
-import { Link } from 'react-router-dom';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 import {loadStripe} from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
@@ -20,6 +19,11 @@ const Cart = (props) => {
         sessionStorage.setItem('cart',JSON.stringify(newCart))
     }
 
+
+    const emptyCart = () => {
+        setCart([])
+    }
+
     return (
         <div className='text-left cart-block'>
             <small>From: <span>Gulistan, Dhaka</span></small>
@@ -35,13 +39,12 @@ const Cart = (props) => {
                 }): ''
             } 
             <Elements stripe={stripePromise}>
-                <CheckoutForm deactBtn={!props.formComplete || !cart.length}/>
+                <CheckoutForm deactBtn={!props.formComplete || !cart.length}
+                    deliveryDetails={props.deliveryDetails}
+                    cart={cart}
+                    emptyCart={emptyCart}/>
             </Elements>
-            {/* <Link to='/tracking'>
-                <button className="btn btn-danger"
-                        disabled={!props.formComplete || !cart.length}
-                >Place Order</button>
-            </Link> */}
+            
             
         </div>
     );
