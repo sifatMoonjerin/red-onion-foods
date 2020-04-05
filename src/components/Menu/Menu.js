@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MenuBar from '../MenuBar/MenuBar';
 import SubMenu from '../SubMenu/SubMenu';
-import fakeData from '../../resources/fakeData';
+//import fakeData from '../../resources/fakeData';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const Menu = () => {
@@ -13,10 +13,13 @@ const Menu = () => {
     );
 
     useEffect(()=>{
-        const newMenu = fakeData.filter(item => {
-            return item.type === curCategory
-        })
-        setCurMenu(newMenu)
+        if(curCategory !== ''){
+            fetch('http://localhost:4200/items/'+curCategory)
+            .then(res => res.json())
+            .then(data => {
+                setCurMenu(data);
+            })
+        }
     },[curCategory])
 
     const handleMenu = submenu => {
@@ -30,9 +33,10 @@ const Menu = () => {
     }
 
     const handleCart = (item,quantity) => {
-        const newCart = cart.filter(el => el.title !== item.title);
+        const newCart = cart.filter(el => el.id !== item._id);
         
         setCart([...newCart, {
+            id: item._id,
             title: item.title,
             image: item.image,
             price: item.price,

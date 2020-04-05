@@ -9,7 +9,8 @@ const SubMenu = (props) => {
             <div className="row">
                 {
                     props.curMenu.map(item => {
-                        return <Item item={item}
+                        return <Item key ={item._id}
+                                    item={item}
                                     handleItem={props.handleItem}
                                 ></Item>
                     })

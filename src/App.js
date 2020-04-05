@@ -14,6 +14,7 @@ import { AuthContextProvider, PrivateRoute } from './components/useAuth/useAuth'
 import Tracking from './components/Tracking/Tracking';
 
 
+
 function App() {
   return (
     <div className="App">
