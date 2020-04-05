@@ -14,7 +14,7 @@ const Menu = () => {
 
     useEffect(()=>{
         if(curCategory !== ''){
-            fetch('http://localhost:4200/items/'+curCategory)
+            fetch('https://quiet-earth-81393.herokuapp.com/items/'+curCategory)
             .then(res => res.json())
             .then(data => {
                 setCurMenu(data);

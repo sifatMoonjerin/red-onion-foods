@@ -31,7 +31,7 @@ const CheckoutForm = (props) => {
         paymentId: paymentMethod.id,
         last4: paymentMethod.card.last4
       }
-      fetch('http://localhost:4200/placeOrder', {
+      fetch('https://quiet-earth-81393.herokuapp.com/placeOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const CheckoutForm = (props) => {
       </button>}
       { 
         paymentSuccess && <div>
-          <p style={{color: 'green'}}>{paymentSuccess}</p>
+          <h5 style={{color: 'green'}}>{paymentSuccess}</h5>
           <p>Order ID: {orderId}</p>
           <Link to='/tracking'>
                 <button className="btn btn-danger">Track Order</button>

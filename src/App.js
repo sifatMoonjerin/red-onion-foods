@@ -10,7 +10,7 @@ import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/SignUp/SignUp';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
-import { AuthContextProvider, PrivateRoute } from './components/useAuth/useAuth';
+import { AuthContextProvider } from './components/useAuth/useAuth';
 import Tracking from './components/Tracking/Tracking';
 
 

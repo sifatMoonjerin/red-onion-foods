@@ -6,7 +6,7 @@ const Inventory = () => {
         const menu = fakeData;
         console.log('posting....')
         console.log(menu)
-        // fetch('http://localhost:4200/addMenu',{
+        // fetch('https://quiet-earth-81393.herokuapp.com/addMenu',{
         //     method: 'POST',
         //     headers: {
         //       'Content-Type': 'application/json'
