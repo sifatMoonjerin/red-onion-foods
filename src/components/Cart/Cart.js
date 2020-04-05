@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import CartItem from '../CartItem/CartItem';
 import './Cart.css';
 import { Link } from 'react-router-dom';
+import CheckoutForm from '../CheckoutForm/CheckoutForm';
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 
 const Cart = (props) => {
+    const stripePromise = loadStripe('pk_test_FSxHFs4lKjG8a5L5xO854nWX00IRAYqpqT');
+
     const [cart, setCart] = useState(
         JSON.parse(sessionStorage.getItem('cart'))
     );
@@ -29,11 +34,14 @@ const Cart = (props) => {
                     return <CartItem item={item} handleCart={handleCart}></CartItem>
                 }): ''
             } 
-            <Link to='/tracking'>
+            <Elements stripe={stripePromise}>
+                <CheckoutForm deactBtn={!props.formComplete || !cart.length}/>
+            </Elements>
+            {/* <Link to='/tracking'>
                 <button className="btn btn-danger"
                         disabled={!props.formComplete || !cart.length}
                 >Place Order</button>
-            </Link>
+            </Link> */}
             
         </div>
     );
