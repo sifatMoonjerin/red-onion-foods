@@ -1,26 +1,7 @@
-import breakfast0 from './Breakfast/breakfast1.png';
-import breakfast1 from './Breakfast/breakfast2.png';
-import breakfast2 from './Breakfast/breakfast3.png';
-import breakfast3 from './Breakfast/breakfast4.png';
-import breakfast4 from './Breakfast/breakfast5.png';
-import breakfast5 from './Breakfast/breakfast6.png';
-import lunch0 from './lunch/lunch1.png';
-import lunch1 from './lunch/lunch2.png';
-import lunch2 from './lunch/lunch3.png';
-import lunch3 from './lunch/lunch4.png';
-import lunch4 from './lunch/lunch5.png';
-import lunch5 from './lunch/lunch6.png';
-import dinner0 from './Dinner/dinner1.png';
-import dinner1 from './Dinner/dinner2.png';
-import dinner2 from './Dinner/dinner3.png';
-import dinner3 from './Dinner/dinner4.png';
-import dinner4 from './Dinner/dinner5.png';
-import dinner5 from './Dinner/dinner6.png';
-
 const fakeData = [
     {
         title: 'Bagel and Cream Cheese',
-        image: breakfast0,
+        image: "https://i.ibb.co/p45dSfz/breakfast1.png",
         price: 6.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -29,7 +10,7 @@ const fakeData = [
     },
     {
         title: 'Breakfast Sandwitch',
-        image: breakfast1,
+        image: "https://i.ibb.co/dc4Zq3q/breakfast2.png",
         price: 9.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -38,7 +19,7 @@ const fakeData = [
     },
     {
         title: 'Baked Chicken',
-        image: breakfast2,
+        image: "https://i.ibb.co/D1M1gK9/breakfast3.png",
         price: 10.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -47,7 +28,7 @@ const fakeData = [
     },
     {
         title: 'Egg Benedict',
-        image: breakfast3,
+        image: "https://i.ibb.co/VM0GVyx/breakfast4.png",
         price: 8.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -56,7 +37,7 @@ const fakeData = [
     },
     {
         title: 'Toast Corrisant Fried Egg',
-        image: breakfast4,
+        image: "https://i.ibb.co/wdy2zZW/breakfast5.png",
         price: 19.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -65,7 +46,7 @@ const fakeData = [
     },
     {
         title: 'Full Breakfast Fried Eggs',
-        image: breakfast5,
+        image: "https://i.ibb.co/SyR3g93/breakfast6.png",
         price: 15.99,
         type: 'breakfast',
         phrase: 'Love what you eat',
@@ -74,7 +55,7 @@ const fakeData = [
     },
     {
         title: 'Healty Meal Combo',
-        image: lunch0,
+        image: "https://i.ibb.co/RhXGNjh/lunch1.png",
         price: 23.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -83,7 +64,7 @@ const fakeData = [
     },
     {
         title: 'Fried Chicken Bento',
-        image: lunch1,
+        image: "https://i.ibb.co/HqV5cz0/lunch2.png",
         price: 9.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -92,7 +73,7 @@ const fakeData = [
     },
     {
         title: 'Tarragon Rubbed Salmon',
-        image: lunch2,
+        image: "https://i.ibb.co/x7KkPPF/lunch3.png",
         price: 6.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -101,7 +82,7 @@ const fakeData = [
     },
     {
         title: 'Indian Lunch',
-        image: lunch3,
+        image: "https://i.ibb.co/GM2BDRc/lunch4.png",
         price: 8.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -110,7 +91,7 @@ const fakeData = [
     },
     {
         title: 'Beef Steak',
-        image: lunch4,
+        image: "https://i.ibb.co/2v5qjPF/lunch5.png",
         price: 15.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -119,7 +100,7 @@ const fakeData = [
     },
     {
         title: 'Salmon with Peppers',
-        image: lunch5,
+        image: "https://i.ibb.co/4SzqPxr/lunch6.png",
         price: 7.99,
         type: 'lunch',
         phrase: 'Love what you eat',
@@ -128,7 +109,7 @@ const fakeData = [
     },
     {
         title: 'Salmon with Lentil Salad',
-        image: dinner0,
+        image: "https://i.ibb.co/XF0DCQX/dinner1.png",
         price: 9.99,
         type: 'dinner',
         phrase: 'Love what you eat',
@@ -137,7 +118,7 @@ const fakeData = [
     },
     {
         title: 'Lemony Salmon Piccata',
-        image: dinner1,
+        image: "https://i.ibb.co/YQpbKJn/dinner2.png",
         price: 10.99,
         type: 'dinner',
         phrase: 'Love what you eat',
@@ -146,7 +127,7 @@ const fakeData = [
     },
     {
         title: 'Lamb Tenderloin',
-        image: dinner2,
+        image: "https://i.ibb.co/wMqWtFQ/dinner3.png",
         price: 12.99,
         type: 'dinner',
         phrase: 'Love what you eat',
@@ -155,7 +136,7 @@ const fakeData = [
     },
     {
         title: 'French Fries with Cheese',
-        image: dinner3,
+        image: "https://i.ibb.co/dQptxqj/dinner4.png",
         price: 8.99,
         type: 'dinner',
         phrase: 'Love what you eat',
@@ -164,7 +145,7 @@ const fakeData = [
     },
     {
         title: 'Garlic Butter Baked Salmon',
-        image: dinner4,
+        image: "https://i.ibb.co/rMSfr47/dinner6.png",
         price: 6.99,
         type: 'dinner',
         phrase: 'Love what you eat',
@@ -173,7 +154,7 @@ const fakeData = [
     },
     {
         title: 'Baked Chicken',
-        image: dinner5,
+        image: "https://i.ibb.co/MpZp9Jj/dinner5.png",
         price: 9.99,
         type: 'dinner',
         phrase: 'Love what you eat',
