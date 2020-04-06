@@ -7,6 +7,21 @@ import {
 } from '@stripe/react-stripe-js';
 
 const CheckoutForm = (props) => {
+  const CARD_STYLES = {
+    style: {
+      base: {
+        fontSize: '18px',
+        color: '#424770',
+        '::placeholder': {
+          color: '#aab7c4',
+        },
+      },
+      invalid: {
+        color: '#9e2146',
+      },
+    }
+  }
+
   const [paymentError, setPaymentError] = useState(null)
   const [paymentSuccess, setPaymentSuccess] = useState(null)
   const [orderId, setOrderId] = useState('')
@@ -51,7 +66,8 @@ const CheckoutForm = (props) => {
 
   return (
     <form style={{marginTop:'20px'}} onSubmit={handleSubmit}>
-      <CardElement/>
+      <h6 className="text-danger">Card Details</h6>
+      <CardElement options={CARD_STYLES} />
       { paymentError && <p style={{color: 'red'}}>{paymentError}</p>}
       { !paymentSuccess && <button className="btn btn-danger address-btn" type="submit" disabled={!stripe || props.deactBtn}>
         Place Order

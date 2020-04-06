@@ -2,6 +2,7 @@ import React from 'react';
 import map from '../../resources/ordercomplete.png';
 import './Tracking.css';
 import Rider from '../Rider/Rider';
+import RatingForm from '../RatingForm/RatingForm';
 
 const Tracking = () => {
     return (
@@ -14,6 +15,7 @@ const Tracking = () => {
                     <Rider></Rider>
                 </div>
             </div>
+            <RatingForm></RatingForm>
         </div>
     );
 };
