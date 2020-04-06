@@ -16,7 +16,6 @@ const Menu = () => {
         fetch('https://quiet-earth-81393.herokuapp.com/items')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             setFullMenu(data);
             setCurCategory('lunch')
         })
@@ -25,7 +24,7 @@ const Menu = () => {
     useEffect(()=>{
         if(curCategory !== ''){
             const current = fullMenu.filter(item => item.type === curCategory)
-            console.log(current)
+            
             setCurMenu(current)
         }
     },[curCategory])
