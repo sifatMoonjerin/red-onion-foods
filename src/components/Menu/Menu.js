@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import MenuBar from '../MenuBar/MenuBar';
 import SubMenu from '../SubMenu/SubMenu';
-//import fakeData from '../../resources/fakeData';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const Menu = () => {
-    const [curCategory, setCurCategory] = useState('lunch');
+    const [curCategory, setCurCategory] = useState('');
+    const [fullMenu, setFullMenu] = useState([])
     const [curMenu, setCurMenu] = useState([]);
     const [curItem, setCurItem] = useState(null);
     const [cart, setCart] = useState(
@@ -13,14 +13,32 @@ const Menu = () => {
     );
 
     useEffect(()=>{
+        fetch('https://quiet-earth-81393.herokuapp.com/items')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setFullMenu(data);
+            setCurCategory('lunch')
+        })
+    },[])
+
+    useEffect(()=>{
         if(curCategory !== ''){
-            fetch('https://quiet-earth-81393.herokuapp.com/items/'+curCategory)
-            .then(res => res.json())
-            .then(data => {
-                setCurMenu(data);
-            })
+            const current = fullMenu.filter(item => item.type === curCategory)
+            console.log(current)
+            setCurMenu(current)
         }
     },[curCategory])
+
+    // useEffect(()=>{
+    //     if(curCategory !== ''){
+    //         fetch('https://quiet-earth-81393.herokuapp.com/items/'+curCategory)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setCurMenu(data);
+    //         })
+    //     }
+    // },[curCategory])
 
     const handleMenu = submenu => {
         setCurCategory(submenu);
